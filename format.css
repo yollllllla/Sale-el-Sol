@@ -1,0 +1,189 @@
+/* CSS Document */
+
+/*Aufgabe 1*/
+body {
+    background-color: #f9eeb7cd;
+/*Grid*/
+    display: grid;
+    /* Hier Code ergänzen */
+    grid-template-columns: 1fr 720px 260px 1fr; /* Die variablen äußeren Spalten haben jeweils Restbreiten. Die Hauptspalten bekommen absolute Pixelwerte */
+    grid-template-rows: auto auto 1fr auto; /* header, footer und nav richten sich nach dem Inhalt und main nimmt die Restfläche ein. */
+    grid-template-areas:
+    " . g-header g-header . "
+    " . g-nav g-nav . "
+    " . g-main g-aside . "
+    " . g-footer g-footer . "; 
+    height: 100vh;
+}
+ 
+/*Aufgabe 2*/
+h1 {
+    color: #bb24c0;
+    font-family:'Lucida Sans';
+}
+    
+h2 {
+    color: #5d9164;
+}
+
+/*Aufgabe 3*/
+a {
+    color: #4caabf;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #a6a6a6;
+}
+
+/*Aufgabe 4*/
+table {
+    color: #5d9164;
+    border: 5px double #305535;
+}
+
+/*Aufgabe 5*/
+img {
+    height: 100px;
+    width: 200px;
+  /*Grid*/
+  margin: 10px; 
+}
+
+#Strand {
+    float: left;
+    box-shadow: 8px 8px 10px #000000;  
+}
+
+#Cocktail {
+    float: left;
+    border: 10px double #bb24c0;
+}
+
+#Zimmer {
+    float: left;
+    border-radius: 100%;
+}
+
+header {
+    border: 1px solid #5d9164c9;
+    border-radius: 20px 20px 20px 20px;
+    background-color: #6ab77455;
+    padding: 10px; 
+    margin: 5px;
+    text-align: center;
+/*Grid*/
+    grid-area: g-header;
+    }
+    
+    nav {
+    border: 1px solid #e7c157;
+    border-radius: 20px;
+    background-color: #fffbf0;   
+    padding: 10px; 
+    margin: 5px;
+/*Grid*/
+    grid-area: g-nav;
+    }
+    
+    main {
+    border: 1px solid #c5acd2;
+    border-radius: 20px;
+    background-color: #cec4d3;
+    padding: 10px; 
+    margin: 5px; 
+/*Grid*/
+    grid-area: g-main;
+    }
+
+    section{
+        border: 1px solid #5d9164c9;
+        border-radius: 20px 20px 20px 20px;
+        background-color: #5d916455;
+        padding: 0px 0px 0px 20px; 
+        margin: 10px 0px 10px 0px;
+        }
+    
+    aside {
+        border: 1px solid #8a9da8;
+        border-radius: 20px;
+        background-color: #c4ced3;
+        padding: 10px; 
+        margin: 5px; 
+/*Grid*/
+        grid-area: g-aside;
+        } 
+       
+    footer{
+    border: 1px solid #8a9da8;
+    border-radius: 20px;
+    background-color: #e4ebf2;
+    padding: 5px; 
+    margin: 5px;
+/*Grid*/
+    grid-area: g-footer;
+    } 
+
+    #Inhalt {
+        border: none; /*entfernt den Rahmen*/
+        height: 100%;
+        width: 100%;
+    }
+    
+    .Hintergrund {
+        background-color: #cec4d3;
+        /*Grid*/
+        display:contents; 
+    }
+
+
+    /*Flexbox Formaotertung für nav*/
+    nav>ul{
+        list-style-type: none; /* Aufzählungspunkte ausblenden */
+        display: flex; /* Flexbox-Container */
+      }
+
+      nav a{
+       
+        background-color: #dbd3bd87; 
+        text-decoration: none; /* keine Unterstreichung */
+        padding: 10px; /* Abstand im den Link */
+      }
+      
+      nav a:hover{
+          background-color: #6ab77455;
+      
+      }
+
+      @media screen and (max-width: 960px) {
+        body {
+        display: grid;
+        grid-template-columns: 720px 240px ;
+        grid-template-rows: 200px auto 1fr 100px;
+        grid-template-areas:
+        " g-header g-header  "
+        " g-nav g-nav  "
+        " g-main g-aside  "
+        " g-footer g-footer  ";
+        height: 100vh;
+    }
+     }
+    @media screen and (max-width: 500px) {
+        body {
+        display: grid;
+        grid-template-columns:100%;
+        grid-template-rows:  200px auto 1fr 1fr 100px ;
+        grid-template-areas:
+        " g-header "
+        " g-nav "
+        " g-main "
+         "g-aside"
+         " g-footer "
+        ;
+       height:100vh;
+    }
+}
+
+ul{
+    list-style-type: square;
+}
